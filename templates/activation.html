@@ -1,0 +1,28 @@
+{% load i18n %}
+
+{% block subject %}
+{% blocktrans %}Активация аккаунта на сайте {{ site_name }}{% endblocktrans %}
+{% endblock subject %}
+
+{% block text_body %}
+{% blocktrans %}Вы получили данное письмо, поскольку вам необходимо закончить регистрацию на сайте {{ site_name }}.{% endblocktrans %}
+
+{% trans "Пожалуйста, перейдите по следующей ссылке для подтверждения аккаунта:" %}
+{{ protocol }}://{{ domain }}/{{ url|safe }}
+
+{% trans "Спасибо за внимание!" %}
+
+{% blocktrans %}С уважением, команда VeneziaStone.{% endblocktrans %}
+{% endblock text_body %}
+
+{% block html_body %}
+<p>{% blocktrans %}Вы получили данное письмо, поскольку вам необходимо закончить регистрацию на сайте {{ site_name }}.{% endblocktrans %}</p>
+
+<p>{% trans "Перейдите по ссылке ниже:" %}</p>
+<p><a href="{{ protocol }}://{{ domain }}/{{ url|safe }}">{{ protocol }}://{{ domain }}/{{ url|safe }}</a></p>
+
+<p>{% trans "Спасибо за внимание!" %}</p>
+
+<p>{% blocktrans %}С уважением, команда VeneziaStone! {% endblocktrans %}</p>
+
+{% endblock html_body %}

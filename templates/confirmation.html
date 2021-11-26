@@ -1,0 +1,21 @@
+{% load i18n %}
+
+{% block subject %}
+{% blocktrans %}{{ site_name }} - Ваш аккаунт успешно активирован!{% endblocktrans %}
+{% endblock %}
+
+{% block text_body %}
+{% trans "Ваш аккаунт полностью готов к использованию на нашем сайте!" %}
+
+{% trans "Спасибо за внимание!" %}
+
+{% blocktrans %}С уважением, команда VeneziaStone!{% endblocktrans %}
+{% endblock text_body %}
+
+{% block html_body %}
+<p>{% trans "Ваш аккаунт полностью готов к использованию на нашем сайте!" %}</p>
+
+<p>{% trans "Спасибо за внимание!" %}</p>
+
+<p>{% blocktrans %}С уважением, команда VeneziaStone!{% endblocktrans %}</p>
+{% endblock html_body %}
